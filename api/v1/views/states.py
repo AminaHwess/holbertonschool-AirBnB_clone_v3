@@ -42,8 +42,7 @@ def delete_state_object(state_id):
     if not statesdict:
         abort(404)
     else:
-        storage.delete(State)
-        storage.save()
+        storage.delete(statesdict)
         return jsonify({}), 200
 
 
