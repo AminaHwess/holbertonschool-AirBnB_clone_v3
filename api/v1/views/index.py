@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """This is the main file for the application,
 it sets up the API endpoints and imports necessary models and views."""
 
