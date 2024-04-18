@@ -3,7 +3,7 @@
 Importing necessary libraries and modules
 and creating the Flask web application
 """
-from flask import Flask
+from flask import Flask, jsonify
 from models import storage
 import os
 from api.v1.views import app_views
@@ -17,6 +17,13 @@ def close(exception):
     """Teardown function to close the storage
     after the application context is destroyed"""
     storage.close()
+
+
+@app.errorhandler(404)
+def error404(error):
+    """This code defines a 404 error handler for a Flask application."""
+    errorjson = {"error": "Not found"}
+    return jsonify(errorjson), 404
 
 
 if __name__ == "__main__":
