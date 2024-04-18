@@ -73,4 +73,5 @@ def update_state(state_id):
         for key, value in data.items():
             if key not in ignored:
                 setattr(statesdict, key, value)
+                storage.save()
         return jsonify(statesdict.to_dict()), 200
