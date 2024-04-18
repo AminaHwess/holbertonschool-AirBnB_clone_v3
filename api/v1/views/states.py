@@ -27,7 +27,7 @@ def retrieve_states():
 def retrieve_state_object(state_id):
     """Retrieve a State object based on id"""
     statesdict = storage.get(State, state_id)
-    if not statesdict:
+    if statesdict is None:
         abort(404)
     else:
         statesdictjs = statesdict.to_dict()
@@ -43,6 +43,7 @@ def delete_state_object(state_id):
         abort(404)
     else:
         storage.delete(statesdict)
+        storage.save()
         return jsonify({}), 200
 
 
