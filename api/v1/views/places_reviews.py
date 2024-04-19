@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-""" New view for Reviews objects that handles all default RESTFul API actions"""
+""" New view for Reviews objects
+that handles all default RESTFul API actions"""
 from api.v1.views import app_views
 from models import storage
 from models.city import City
