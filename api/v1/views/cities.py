@@ -18,7 +18,7 @@ def retrieve_cities(state_id):
     all_cities = storage.all(City)
     for city in all_cities.values():
         if city.state_id == state_id:
-            city_list.append(city.todict())
+            city_list.append(city.to_dict())
     return jsonify(city_list)
 
 
