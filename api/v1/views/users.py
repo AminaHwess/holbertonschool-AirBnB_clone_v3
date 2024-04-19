@@ -31,7 +31,7 @@ def retrieve_user_object(user_id):
 
 @app_views.route("/users/<user_id>",
                  methods=["DELETE"], strict_slashes=False)
-def delete_userèobj(user_id):
+def delete_user_obj(user_id):
     """deletes an Amenity object based on id"""
     usersdict = storage.get(User, user_id)
     if not usersdict:
