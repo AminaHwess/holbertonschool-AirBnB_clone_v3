@@ -15,7 +15,6 @@ def retrieve_cities(state_id):
     statesdict = storage.get(State, state_id)
     if statesdict is None:
         abort(404)
-    cities = storage.all("City")
     city_list = []
     all_cities = storage.all(City)
     for city in all_cities.values():
